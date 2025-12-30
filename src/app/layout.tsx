@@ -3,6 +3,7 @@
 import GlobalStyle from "@/style/GlobalStyle";
 import styled from "@emotion/styled";
 import React from "react";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -13,6 +14,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GlobalStyle />
+        <Script
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_APP_JS_KEY}&autoload=false`}
+          strategy="beforeInteractive"
+        />
         <Container>{children}</Container>
       </body>
     </html>
