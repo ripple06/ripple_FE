@@ -167,11 +167,6 @@ export const LoginButton = styled.button`
       opacity: 1;
       transform: translateY(0);
     }
-      
-    &:hover {
-    transform: scale(1.04);
-    background-color: #44329cff;
-  }
   }
 `;
 
@@ -181,7 +176,6 @@ export const LoginButtonWrapper = styled.div`
 
   &:hover {
     transform: scale(1.04);
-    background-color: #44329cff;
   }
 
   &:active {

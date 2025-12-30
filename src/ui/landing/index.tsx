@@ -1,7 +1,12 @@
+"use client";
+
 import * as S from "./style";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Landing() {
+  const router = useRouter();
+
   return (
     <S.Layout>
       <S.Container>
@@ -25,7 +30,7 @@ export default function Landing() {
         <S.BottomSection>
           <S.TooltipBubble>3초만에 하는 회원가입 🚀</S.TooltipBubble>
           <S.LoginButtonWrapper>
-            <S.LoginButton>로그인</S.LoginButton>
+            <S.LoginButton onClick={() => router.push("/signUp")}>로그인</S.LoginButton>
           </S.LoginButtonWrapper>
         </S.BottomSection>
       </S.Container>
