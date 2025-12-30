@@ -59,7 +59,7 @@ export const QuestionNumber = styled.h2`
     font-size: 1.5rem;
     font-weight: 700;
     color: #212121;
-    margin-bottom: 8px;
+    margin-bottom: 1.75rem;
 `;
 
 export const QuestionText = styled.p`
