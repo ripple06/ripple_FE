@@ -39,7 +39,7 @@ export default function MyPage() {
                             onChange={(e) => setNickname(e.target.value)}
                         />
                         <S.Input
-                            placeholder="ISTP"
+                            placeholder="CUTE"
                             value={mbti}
                             onChange={(e) => setMbti(e.target.value)}
                         />
@@ -60,7 +60,6 @@ export default function MyPage() {
                         ))}
                     </S.CommentList>
                 </S.Section>
-
                 <BottomNav />
             </S.Container>
         </S.Layout>
