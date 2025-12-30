@@ -19,7 +19,6 @@ export const Container = styled.div`
   background-color: white;
   padding: 2rem 1.5rem;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 `;
 
 export const Header = styled.div`
