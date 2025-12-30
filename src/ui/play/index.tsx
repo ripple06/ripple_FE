@@ -47,7 +47,7 @@ export default function QuizPlay() {
             setCurrentIndex(prev => prev + 1);
             setSelectedOption(null);
         } else {
-            router.push("/finish");
+            router.push("/quiz/finish");
         }
     };
 

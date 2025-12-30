@@ -59,7 +59,16 @@ export const QuestionNumber = styled.h2`
     font-size: 1.5rem;
     font-weight: 700;
     color: #212121;
-    margin-bottom: 1.5rem;
+    margin-bottom: 8px;
+`;
+
+export const QuestionText = styled.p`
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212121;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
 `;
 
 export const OptionList = styled.div`
