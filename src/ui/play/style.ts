@@ -2,22 +2,22 @@ import styled from "@emotion/styled";
 
 export const Layout = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   background-color: #f0f0f0;
+  overflow: hidden;
 `;
 
 export const Container = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 430px;
-  min-height: 100vh;
-  background-color: white;
-  padding-bottom: 80px;
-  overflow-y: auto;
+  height: 100vh;
+  max-height: 932px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Header = styled.div`
