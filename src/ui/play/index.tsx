@@ -88,8 +88,7 @@ export default function QuizPlay() {
                     </S.ProgressBar>
                 </S.Header>
                 <S.Content>
-                    <S.QuestionNumber>Q. Quiz {currentQuestion.id}</S.QuestionNumber>
-                    <S.QuestionText>{currentQuestion.question}</S.QuestionText>
+                    <S.QuestionNumber>Q{currentQuestion.id}. {currentQuestion.question}</S.QuestionNumber>
                     <S.OptionList>
                         {currentQuestion.options.map((option, index) => (
                             <S.OptionItem
