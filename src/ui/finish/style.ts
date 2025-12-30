@@ -75,7 +75,6 @@ export const Title = styled.h1`
   text-align: center;
   line-height: 1.4;
   white-space: pre-wrap;
-  margin-bottom: 12px;
 `;
 
 export const Subtitle = styled.p`
