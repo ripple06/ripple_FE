@@ -35,10 +35,14 @@ export default function KakaoMap() {
                                 lng: latlng.getLng()
                             };
 
+                            // 시작 지점이 없으면 시작 지점 설정, 있으면 도착 지점 설정
                             setStartPoint(prev => {
-                                if (!prev) return newPoint;
-                                setEndPoint(newPoint);
-                                return prev;
+                                if (prev) {
+                                    // 이미 시작지점이 있으면 도착지점을 설정 (비동기적으로 실행됨)
+                                    setEndPoint(newPoint);
+                                    return prev;
+                                }
+                                return newPoint;
                             });
                         });
                     }
