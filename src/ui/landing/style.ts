@@ -148,7 +148,7 @@ export const BubbleBottomRight = styled(BaseBubble)`
 
 export const LoginButton = styled.button`
   width: 100%;
-  padding: 1rem;
+  padding: 1.35rem;
   border-radius: 4px;
   background-color: #7B61FF;
   color: white;

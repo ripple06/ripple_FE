@@ -31,7 +31,7 @@ export default function SignUp() {
                         <S.Label>MBTI<span>*</span></S.Label>
                         <S.Input placeholder="ISTP" />
                     </S.InputGroup>
-                    <S.BottomButton>다음</S.BottomButton>
+                    <S.BottomButton onClick={() => router.push("/success")}>다음</S.BottomButton>
                 </S.Form>
             </S.Container>
         </S.Layout>
