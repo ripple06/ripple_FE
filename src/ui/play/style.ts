@@ -59,7 +59,16 @@ export const QuestionNumber = styled.h2`
     font-size: 1.5rem;
     font-weight: 700;
     color: #212121;
-    margin-bottom: 1.75rem;
+    margin-bottom: 8px;
+`;
+
+export const QuestionText = styled.p`
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212121;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
 `;
 
 export const OptionList = styled.div`
@@ -68,12 +77,20 @@ export const OptionList = styled.div`
     gap: 12px;
 `;
 
-export const OptionItem = styled.div<{ selected: boolean }>`
+export const OptionItem = styled.div<{ selected: boolean; status?: 'correct' | 'wrong' | 'none' }>`
     width: 100%;
     padding: 18px 20px;
-    border: 1px solid ${props => props.selected ? '#7364FE' : '#E0E0E0'};
+    border: 1px solid ${props => {
+    if (props.status === 'correct') return '#4CAF50';
+    if (props.status === 'wrong') return '#F44336';
+    return props.selected ? '#7364FE' : '#E0E0E0';
+  }};
     border-radius: 8px;
-    background-color: ${props => props.selected ? '#F3F0FF' : '#FFFFFF'};
+    background-color: ${props => {
+    if (props.status === 'correct') return '#E8F5E9';
+    if (props.status === 'wrong') return '#FFEBEE';
+    return props.selected ? '#F3F0FF' : '#FFFFFF';
+  }};
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -83,17 +100,42 @@ export const OptionItem = styled.div<{ selected: boolean }>`
     span:first-of-type {
         font-size: 1.25rem;
         font-weight: 700;
-        color: ${props => props.selected ? '#7364FE' : '#212121'};
+        color: ${props => {
+    if (props.status === 'correct') return '#4CAF50';
+    if (props.status === 'wrong') return '#F44336';
+    return props.selected ? '#7364FE' : '#212121';
+  }};
     }
 
     span:last-of-type {
         font-size: 1rem;
         font-weight: 500;
-        color: ${props => props.selected ? '#7364FE' : '#212121'};
+        color: ${props => {
+    if (props.status === 'correct') return '#4CAF50';
+    if (props.status === 'wrong') return '#F44336';
+    return props.selected ? '#7364FE' : '#212121';
+  }};
     }
+`;
 
-    &:hover {
-        border-color: #7364FE;
+export const ExplanationBox = styled.div`
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border-radius: 12px;
+    border-left: 4px solid #7364FE;
+    
+    h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #7364FE;
+        margin-bottom: 8px;
+    }
+    
+    p {
+        font-size: 0.95rem;
+        color: #616161;
+        line-height: 1.5;
     }
 `;
 
