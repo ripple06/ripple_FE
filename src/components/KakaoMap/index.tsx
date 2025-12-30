@@ -11,7 +11,8 @@ declare global {
 
 export default function KakaoMap() {
     const mapContainer = useRef<HTMLDivElement>(null);
-    const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
+    const [startPoint, setStartPoint] = useState<{ lat: number; lng: number } | null>(null);
+    const [endPoint, setEndPoint] = useState<{ lat: number; lng: number } | null>(null);
 
     useEffect(() => {
         const onLoadKakaoMap = () => {
@@ -26,27 +27,18 @@ export default function KakaoMap() {
                     if (mapContainer.current) {
                         const map = new window.kakao.maps.Map(mapContainer.current, options);
 
-                        // 현재 중심 좌표 초기화
-                        setCoords({
-                            lat: center.getLat(),
-                            lng: center.getLng()
-                        });
-
                         // 클릭 이벤트 리스너 등록
                         window.kakao.maps.event.addListener(map, 'click', (mouseEvent: any) => {
                             const latlng = mouseEvent.latLng;
-                            setCoords({
+                            const newPoint = {
                                 lat: latlng.getLat(),
                                 lng: latlng.getLng()
-                            });
-                        });
+                            };
 
-                        // 중심 좌표 변경 시 업데이트
-                        window.kakao.maps.event.addListener(map, 'center_changed', () => {
-                            const latlng = map.getCenter();
-                            setCoords({
-                                lat: latlng.getLat(),
-                                lng: latlng.getLng()
+                            setStartPoint(prev => {
+                                if (!prev) return newPoint;
+                                setEndPoint(newPoint);
+                                return prev;
                             });
                         });
                     }
@@ -76,15 +68,31 @@ export default function KakaoMap() {
         }
     }, []);
 
+    const resetPoints = () => {
+        setStartPoint(null);
+        setEndPoint(null);
+    };
+
     return (
         <S.MapWrapper>
             <S.MapContainer ref={mapContainer} />
-            {coords && (
-                <S.CoordBox>
-                    <span>현재 위치 좌표</span>
-                    <strong>{coords.lat.toFixed(6)}, {coords.lng.toFixed(6)}</strong>
-                </S.CoordBox>
-            )}
+            <S.CoordBoxContainer>
+                {startPoint && (
+                    <S.CoordBox>
+                        <span>시작지점</span>
+                        <strong>{startPoint.lat.toFixed(6)}, {startPoint.lng.toFixed(6)}</strong>
+                    </S.CoordBox>
+                )}
+                {endPoint && (
+                    <S.CoordBox variant="end">
+                        <span>도착지점</span>
+                        <strong>{endPoint.lat.toFixed(6)}, {endPoint.lng.toFixed(6)}</strong>
+                    </S.CoordBox>
+                )}
+                {(startPoint || endPoint) && (
+                    <S.ResetButton onClick={resetPoints}>초기화</S.ResetButton>
+                )}
+            </S.CoordBoxContainer>
         </S.MapWrapper>
     );
 }
