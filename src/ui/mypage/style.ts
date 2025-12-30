@@ -79,7 +79,7 @@ export const Input = styled.input`
   outline: none;
   
   &::placeholder {
-    color: #bdbdbd;
+    color: #212121;
   }
 
   &:focus {
