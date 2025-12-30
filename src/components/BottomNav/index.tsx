@@ -8,7 +8,12 @@ export default function BottomNav() {
     const pathname = usePathname();
     const router = useRouter();
 
-    const isActive = (path: string) => pathname === path;
+    const isActive = (path: string) => {
+        if (path === '/recommand') {
+            return pathname === '/recommand' || pathname === '/result' || pathname === '/question';
+        }
+        return pathname === path;
+    };
 
     const navItems = [
         {
