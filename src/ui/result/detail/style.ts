@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   padding: 20px;
-  padding-top: 40px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
 `;
