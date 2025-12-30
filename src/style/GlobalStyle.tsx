@@ -14,7 +14,7 @@ const GlobalStyle = () => (
       }
       @font-face {
         font-family: "Pretendard";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-semibold.woff2")
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
           format("woff2");
         font-weight: 500;
         font-display: swap;
