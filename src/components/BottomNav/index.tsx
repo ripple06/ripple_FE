@@ -12,6 +12,9 @@ export default function BottomNav() {
         if (path === '/recommand') {
             return pathname === '/recommand' || pathname === '/result' || pathname === '/question';
         }
+        if (path === '/quiz') {
+            return pathname === '/quiz' || pathname === '/quizPlay';
+        }
         return pathname === path;
     };
 

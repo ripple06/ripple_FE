@@ -39,7 +39,7 @@ export default function MyPage() {
                             onChange={(e) => setNickname(e.target.value)}
                         />
                         <S.Input
-                            placeholder="CUTE"
+                            placeholder="ISTP"
                             value={mbti}
                             onChange={(e) => setMbti(e.target.value)}
                         />

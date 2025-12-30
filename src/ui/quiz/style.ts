@@ -13,7 +13,6 @@ const floatRocket = keyframes`
   100% { transform: translate(0, 0); }
 `;
 
-
 export const Layout = styled.div`
   width: 100%;
   height: 100vh;
@@ -34,7 +33,6 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
 
-  /* Background blobs */
   &::before {
     content: '';
     position: absolute;

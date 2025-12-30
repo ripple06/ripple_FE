@@ -5,7 +5,7 @@ import Image from "next/image";
 import * as S from "./style";
 import BottomNav from "@/components/BottomNav";
 
-export default function SignUpSuccess() {
+export default function Quiz() {
     const router = useRouter();
 
     return (
@@ -21,7 +21,7 @@ export default function SignUpSuccess() {
                         바다에 대한 퀴즈를{"\n"}
                         풀어보아요.
                     </S.Title>
-                    <S.Subtitle>다양한 질문들이 등장합니다.</S.Subtitle>
+                    <S.Subtitle>다양한 질문들이 5가지 등장합니다.</S.Subtitle>
                     <S.RocketWrapper>
                         <Image src="/what.svg" alt="what" width={348} height={348} />
                     </S.RocketWrapper>
@@ -41,7 +41,7 @@ export default function SignUpSuccess() {
                 <S.BubbleWrapper top="80%" left="25%" size="70px" delay="1.5s">
                     <Image src="/Cbubble.svg" alt="bubble" width={100} height={100} />
                 </S.BubbleWrapper>
-                <S.BottomButton onClick={() => router.push("/main")}>
+                <S.BottomButton onClick={() => router.push("/quizPlay")}>
                     시작하기
                 </S.BottomButton>
                 <BottomNav />
