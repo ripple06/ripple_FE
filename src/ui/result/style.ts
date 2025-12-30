@@ -64,6 +64,7 @@ export const CourseItemWrapper = styled.div<{ top: number; left?: number; right?
     top: ${props => props.top}px;
     ${props => props.left !== undefined ? `left: ${props.left}px;` : `right: ${props.right}px;`}
     z-index: 2;
+    cursor: pointer;
 `;
 
 export const CourseCard = styled.div`

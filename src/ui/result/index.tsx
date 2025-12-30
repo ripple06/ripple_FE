@@ -39,6 +39,7 @@ export default function Result() {
                             top={item.top}
                             left={item.align === 'left' ? 24 : undefined}
                             right={item.align === 'right' ? 24 : undefined}
+                            onClick={() => router.push(`/result/detail/${item.id}`)}
                         >
                             <S.CourseCard>
                                 <S.CourseImage />
