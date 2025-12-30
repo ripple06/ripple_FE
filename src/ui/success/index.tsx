@@ -40,7 +40,7 @@ export default function SignUpSuccess() {
                 <S.BubbleWrapper top="80%" left="25%" size="70px" delay="1.5s">
                     <Image src="/Cbubble.svg" alt="bubble" width={100} height={100} />
                 </S.BubbleWrapper>
-                <S.BottomButton onClick={() => router.push("/")}>
+                <S.BottomButton onClick={() => router.push("/main")}>
                     시작하기
                 </S.BottomButton>
             </S.Container>
