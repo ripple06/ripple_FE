@@ -15,28 +15,39 @@ export default function KakaoMap() {
     useEffect(() => {
         const onLoadKakaoMap = () => {
             window.kakao.maps.load(() => {
-                const center = new window.kakao.maps.LatLng(37.566826, 126.9786567); // Seoul City Hall default
-                const options = {
-                    center: center,
-                    level: 3
+                const defaultCenter = new window.kakao.maps.LatLng(37.566826, 126.9786567); // Seoul City Hall default
+
+                const initializeMap = (center: any) => {
+                    const options = {
+                        center: center,
+                        level: 3
+                    };
+                    if (mapContainer.current) {
+                        new window.kakao.maps.Map(mapContainer.current, options);
+                    }
                 };
 
-                if (mapContainer.current) {
-                    new window.kakao.maps.Map(mapContainer.current, options);
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            const currentCenter = new window.kakao.maps.LatLng(lat, lon);
+                            initializeMap(currentCenter);
+                        },
+                        (error) => {
+                            console.error("Geolocation error:", error);
+                            initializeMap(defaultCenter);
+                        }
+                    );
+                } else {
+                    initializeMap(defaultCenter);
                 }
             });
         };
 
         if (window.kakao && window.kakao.maps) {
             onLoadKakaoMap();
-        } else {
-            // Retry or wait - relying on script `beforeInteractive` should make it available usually,
-            // but `autoload=false` means we need to call load.
-            // If it's not existing yet, it might be loading.
-            // A simple way is to check interval or hook into script onLoad, but next/script handles loading.
-            // Since we use 'beforeInteractive', it should be there.
-            // If not, we can add an event listener or simple retry.
-            // For now simple checking.
         }
     }, []);
 
