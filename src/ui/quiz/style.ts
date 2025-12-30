@@ -59,6 +59,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   padding: 20px;
   display: flex;
+  margin-top: 20px;
   align-items: center;
   z-index: 1;
 `;
