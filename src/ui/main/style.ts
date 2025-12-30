@@ -34,22 +34,6 @@ export const Container = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 `;
 
-export const MapBackground = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #bdbdbd;
-  font-size: 1.5rem;
-  font-weight: 700;
-`;
-
 export const TopLeftGroup = styled.div`
   position: absolute;
   top: 60vh;

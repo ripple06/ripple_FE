@@ -3,6 +3,7 @@
 import { useState } from "react";
 import * as S from "./style";
 import BottomNav from "@/components/BottomNav";
+import KakaoMap from "@/components/KakaoMap";
 import Image from "next/image";
 
 export default function Main() {
@@ -11,7 +12,7 @@ export default function Main() {
     return (
         <S.Layout>
             <S.Container>
-                <S.MapBackground>Map View</S.MapBackground>
+                <KakaoMap />
                 {isMenuOpen && (
                     <S.TopLeftGroup>
                         <S.FloatingButton>주변 볼거리</S.FloatingButton>
